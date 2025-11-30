@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Comidas Atípicas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            /* Fondo oscuro elegante: imagen pública de Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b3c1a6d3b2b0a5d3e9a2a1b3df4f2d1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .content-section {
+            display: none;
+            padding: 30px;
+        }
+
+        .card img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .bg-dark-transparent {
+            background-color: rgba(0,0,0,0.72);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-menu {
+            width: 200px;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        /* pequeñas mejoras responsivas */
+        @media (max-width: 576px) {
+            .card img { height: 180px; }
+            .btn-menu { width: 140px; font-size: 16px; }
+        }
+    </style>
+</head>
+
+<body class="text-center">
+
+    <div id="main" class="container mt-5 bg-dark-transparent">
+        <h1 class="mb-4">Restaurante de Comidas Atípicas</h1>
+        <p>Descubre los platos más raros del mundo</p>
+
+        <button class="btn btn-primary btn-menu" onclick="showSection('entradas')">Entradas</button>
+        <button class="btn btn-danger btn-menu" onclick="showSection('platos')">Plato Fuerte</button>
+        <button class="btn btn-warning btn-menu" onclick="showSection('postres')">Postres</button>
+        <button class="btn btn-success btn-menu" onclick="showSection('bebidas')">Bebidas</button>
+        <button class="btn btn-info btn-menu" onclick="showSection('reservas')">Reservas</button>
+    </div>
+
+    <!-- ENTRADAS -->
+    <div id="entradas" class="content-section container bg-dark-transparent">
+        <h2>Entradas Exóticas</h2><hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Surströmming (Wikimedia) -->
+                    <img src="https://www.infobae.com/resizer/v2/4JQLJYWFCVCR3K3SH444DUXWOY.png?auth=1bbfe6a5c523ccb2ebc5146aa0cf3ea3f0cb8a54495916c67013f81760bd487b&smart=true&width=1200&height=900&quality=85" class="card-img-top" alt="Surströmming">
+                    <div class="card-body">
+                        <h5 class="card-title">Surströmming</h5>
+                        <p class="card-text">Arenque fermentado sueco, con olor extremadamente fuerte y tradición local.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Hákarl (Wikimedia) -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/H%C3%A1karl2.jpg" class="card-img-top" alt="Hakarl">
+                    <div class="card-body">
+                        <h5 class="card-title">Hákarl</h5>
+                        <p class="card-text">Tiburón fermentado islandés, de sabor intenso y aroma particular.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-light mt-3" onclick="goHome()">Volver</button>
+    </div>
+
+    <!-- PLATOS FUERTES -->
+    <div id="platos" class="content-section container bg-dark-transparent">
+        <h2>Platos Fuertes Atípicos</h2><hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Balut (Wikimedia) -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUBK67UaaBGi_kk4StWImCF95pVf567wckQ&s" class="card-img-top" alt="Balut">
+                    <div class="card-body">
+                        <h5 class="card-title">Balut</h5>
+                        <p class="card-text">Huevo de pato fertilizado cocido en su cáscara, consumido como snack en Filipinas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Sannakji (Wikimedia) -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrjZcJr0OCnPYui8__mIV3Q5I6tjOdHJ1Lfg&s" class="card-img-top" alt="Sannakji">
+                    <div class="card-body">
+                        <h5 class="card-title">Sannakji</h5>
+                        <p class="card-text">Pulpo servido crudo y a menudo aún con movimiento; textura y experiencia única.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-light mt-3" onclick="goHome()">Volver</button>
+    </div>
+
+    <!-- POSTRES -->
+    <div id="postres" class="content-section container bg-dark-transparent">
+        <h2>Postres Inusuales</h2><hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Helado de pulpo - imagen Unsplash / Wikimedia alternativa -->
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/39/66/eb/ensalada-de-pulpo-a-la.jpg" class="card-img-top" alt="Helado de Pulpo">
+                    <div class="card-body">
+                        <h5 class="card-title">Helado de Pulpo</h5>
+                        <p class="card-text">Postre experimental con sabor marino, presente en algunas ferias gastronómicas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Pastel de sangre (Wikimedia) -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0jXzuOmFRCYNtduHLTNuE-OXVdL3YFKXNeA&s" class="card-img-top" alt="Pastel de Sangre">
+                    <div class="card-body">
+                        <h5 class="card-title">Pastel de Sangre</h5>
+                        <p class="card-text">Producto tradicional hecho con sangre y arroz glutinoso, consumido en algunas regiones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-light mt-3" onclick="goHome()">Volver</button>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div id="bebidas" class="content-section container bg-dark-transparent">
+        <h2>Bebidas Extrañas</h2><hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Snake wine (Wikimedia) -->
+                    <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/12/26/d4c70c7b-eada-40cb-a369-9b69c12c5bee_229ae51b.jpg" class="card-img-top" alt="Vino de Serpiente">
+                    <div class="card-body">
+                        <h5 class="card-title">Vino de Serpiente</h5>
+                        <p class="card-text">Licor asiático con serpientes en maceración; tradición y curiosidad etnográfica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <!-- Kopi Luwak (Wikimedia) -->
+                    <img src="https://imagenes.portafolio.co/files/image_1200_600/uploads/2016/02/05/56b54e9080f83.jpeg" class="card-img-top" alt="Café de Civeta">
+                    <div class="card-body">
+                        <h5 class="card-title">Café de Civeta</h5>
+                        <p class="card-text">Café hecho con granos parcialmente digeridos por la civeta; alto precio y debate ético.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-light mt-3" onclick="goHome()">Volver</button>
+    </div>
+
+    <!-- RESERVAS -->
+    <div id="reservas" class="content-section container bg-dark-transparent">
+        <h2>Reservas</h2><hr>
+
+        <form onsubmit="enviarReserva(event)">
+            <input class="form-control mb-2" type="text" placeholder="Nombre" required>
+            <input class="form-control mb-2" type="date" required>
+            <input class="form-control mb-2" type="text" placeholder="Contacto" required>
+            <button class="btn btn-success mt-2" type="submit">Enviar</button>
+        </form>
+
+        <p id="mensaje" class="mt-3"></p>
+
+        <button class="btn btn-light mt-3" onclick="goHome()">Volver</button>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.getElementById('main').style.display = 'none';
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            // hacer scroll al top para asegurar que se vea el contenido en pantallas pequeñas
+            window.scrollTo(0,0);
+        }
+
+        function goHome() {
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById('main').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function enviarReserva(e) {
+            e.preventDefault();
+            document.getElementById('mensaje').innerText = "¡Reserva enviada!";
+        }
+    </script>
+
+</body>
+</html>
